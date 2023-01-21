@@ -2,11 +2,16 @@
  * https://www.gov.uk/guidance/skill-levels-for-digital-data-and-technology-roles
  */
 const skillLevelsLookup = {
-    'Awareness' : 'You know about the skill and have an appreciation of how it is applied in the environment.',
-    'Working' : 'You can apply your knowledge and experience of the skill, including tools and techniques. You can adopt those most appropriate for the environment.',
-    'Practitioner' : 'You know how to share your knowledge and experience of this skill with others, including tools and techniques. You can define those most appropriate for the environment.',
-    'Expert' : 'You have both knowledge and experience in the application of this skill. You are a recognised specialist and adviser in this skill including user needs, generation of ideas, methods and tools. You can lead or guide others in best-practice use.',
+    'Awareness':     'You know about the skill and have an appreciation of how it is applied in the environment.',
+    'Working':       'You can apply your knowledge and experience of the skill, including tools and techniques. You can adopt those most appropriate for the environment.',
+    'Practitioner':  'You know how to share your knowledge and experience of this skill with others, including tools and techniques. You can define those most appropriate for the environment.',
+    'Expert':        'You have both knowledge and experience in the application of this skill. You are a recognised specialist and adviser in this skill including user needs, generation of ideas, methods and tools. You can lead or guide others in best-practice use.',
 };
+
+const allSkillLevelNames = Object.freeze(
+    Object.keys(skillLevelsLookup)
+        .filter(value => skillLevelsLookup.hasOwnProperty(value))
+);
 
 
 /*
@@ -25,6 +30,11 @@ const skillsLookup = {
     'Systems integration':                              'You can identify integration points between systems and processes, designing data contracts and communication between the components. You can make use of modern design patterns that reduce risk and complexity where possible. You can perform integration tests as part of the development process, drawing on suitable testing frameworks and methodologies.',
     'User focus':                                       'You can understand users and identify who they are and what their needs are, based on evidence. You can translate user stories and propose design approaches or services to meet these needs. You can engage in meaningful interactions and relationships with users. You can show that you put users first and can manage competing priorities.',
 };
+
+const allSkillNames = Object.freeze(
+    Object.keys(skillsLookup)
+        .filter(value => skillsLookup.hasOwnProperty(value))
+);
 
 
 /*
@@ -113,10 +123,10 @@ const rolesAndMappedSkillLevelsLookup = [
     { title: 'Software Developer',                              skills: [ { name: 'Availability and capacity management', level: 'Working' },           { name: 'Development process optimisation', level: 'Awareness' },     { name: 'Development process optimisation (management)', level: null },             { name: 'Information security', level: 'Practitioner' },    { name: 'Modern standards approach', level: 'Practitioner' },    { name: 'Programming and build (software engineering)', level: 'Practitioner' },     { name: 'Prototyping', level: 'Practitioner' },    { name: 'Service support', level: 'Working' },         { name: 'Systems design', level: 'Working' },         { name: 'Systems integration', level: 'Working' },           { name: 'User focus', level: 'Practitioner' },     ]},
     { title: 'Junior Software Developer',                       skills: [ { name: 'Availability and capacity management', level: 'Awareness' },         { name: 'Development process optimisation', level: null },            { name: 'Development process optimisation (management)', level: null },             { name: 'Information security', level: 'Working' },         { name: 'Modern standards approach', level: 'Working' },         { name: 'Programming and build (software engineering)', level: 'Working' },          { name: 'Prototyping', level: 'Working' },         { name: 'Service support', level: 'Working' },         { name: 'Systems design', level: 'Awareness' },       { name: 'Systems integration', level: 'Awareness' },         { name: 'User focus', level: 'Awareness' },        ]},
     { title: 'Apprentice Software Developer',                   skills: [ { name: 'Availability and capacity management', level: 'Awareness' },         { name: 'Development process optimisation', level: null },            { name: 'Development process optimisation (management)', level: null },             { name: 'Information security', level: 'Awareness' },       { name: 'Modern standards approach', level: 'Awareness' },       { name: 'Programming and build (software engineering)', level: 'Working' },          { name: 'Prototyping', level: 'Awareness' },       { name: 'Service support', level: 'Awareness' },       { name: 'Systems design', level: null },              { name: 'Systems integration', level: null },                { name: 'User focus', level: 'Awareness' },        ]},
-]
+];
 
-
-
-
-
+const allRoleNames = Object.freeze(
+    rolesAndMappedSkillLevelsLookup
+        .map(value => value.title)
+);
 
