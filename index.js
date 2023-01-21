@@ -114,7 +114,7 @@ function updateSkillsTable(tableElem, model, _roles) {
 
                         return '' +
                             '<td style="' + style + '">' +
-                            '<strong>' + skillDescriptorLevel + ': ' + '</strong>' +
+                            '<strong title="' + skillLevelsLookup[skillDescriptorLevel] + '">' + skillDescriptorLevel + ': ' + '</strong>' +
                             '<small>' + skillDescription + '</small>' +
                             '</td>';
                     }
