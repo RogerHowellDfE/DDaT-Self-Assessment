@@ -155,25 +155,25 @@ function updateSkillSelectionRadios(elem, model) {
                 <div class="row">
                 ${
                 allSkillLevelNames
-                    .map(allSkillLevelName => {
+                    .map(skillLevelName => {
                         const description = softwareDeveloperSkillLevelDescriptorsLookup[skillName]
-                            .find(value1 => value1.skillLevel === allSkillLevelName)
+                            .find(value1 => value1.skillLevel === skillLevelName)
                             .description;
 
-                        const isSelected = model[skillName] === allSkillLevelName;
+                        const isSelected = model[skillName] === skillLevelName;
                         const s = `
                                 <div class="col-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio"
                                                data-skill-display-name="${skillName}"
-                                               data-skill-level-name="${allSkillLevelName}"
+                                               data-skill-level-name="${skillLevelName}"
                                                name="${skillNameAsIdPrefix}_radioOptions"
-                                               id="${skillNameAsIdPrefix}_radio_${allSkillLevelName}"
-                                               value="${allSkillLevelName}"
+                                               id="${skillNameAsIdPrefix}_radio_${skillLevelName}"
+                                               value="${skillLevelName}"
                                                ${description === null ? ' disabled' : ''}
                                                ${isSelected ? 'checked' : '' }>
-                                        <label class="form-check-label" for="${skillNameAsIdPrefix}_radio_${allSkillLevelName}">
-                                            <strong title="${skillLevelsLookup[allSkillLevelName]}">${allSkillLevelName}.</strong>
+                                        <label class="form-check-label" for="${skillNameAsIdPrefix}_radio_${skillLevelName}">
+                                            <strong title="${skillLevelsLookup[skillLevelName]}">${skillLevelName}.</strong>
                                             ${description || 'Not Specified'}
                                         </label>
                                     </div>
