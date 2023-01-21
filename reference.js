@@ -1,7 +1,7 @@
 /*
  * https://www.gov.uk/guidance/skill-levels-for-digital-data-and-technology-roles
  */
-const skillLevels = {
+const skillLevelsLookup = {
     'Awareness' : 'You know about the skill and have an appreciation of how it is applied in the environment.',
     'Working' : 'You can apply your knowledge and experience of the skill, including tools and techniques. You can adopt those most appropriate for the environment.',
     'Practitioner' : 'You know how to share your knowledge and experience of this skill with others, including tools and techniques. You can define those most appropriate for the environment.',
@@ -12,7 +12,7 @@ const skillLevels = {
 /*
  * https://www.gov.uk/guidance/software-developer
  */
-const skills = {
+const skillsLookup = {
     'Availability and capacity management':             'You can define, analyse, plan, forecast, measure, maintain and improve all aspects of the availability of services, including power. You can control and manage service availability to meet business needs cost-effectively, including managing the capability, functionality and sustainability of service components (such as hardware, software, network resources, and software or infrastructure as a service).',
     'Development process optimisation':                 'You can identify opportunities for improving the development process, make these improvements and evaluate their success. You can work with others to select and implement tools and practices to build confidence and reduce risk in each stage of the software development life cycle (from planning and prioritisation through to build, test, deployment and monitoring).',
     'Development process optimisation (management)':    'You can create strategies for optimising the development process. You can influence and build consensus with stakeholders to ensure that the required technical improvements are aligned with business objectives. You can iterate on the development of standards and policies, working with delivery teams to ensure that these policies are producing the required outcome and continue to be attainable, applicable and fit for purpose.',
@@ -30,7 +30,7 @@ const skills = {
 /*
  * https://www.gov.uk/guidance/software-developer
  */
-const softwareDeveloperSkillLevelDescriptors = {
+const softwareDeveloperSkillLevelDescriptorsLookup = {
     'Availability and capacity management': [
         {skillLevel: 'Awareness',     description: 'You can show an awareness of availability and capacity management processes.'},
         {skillLevel: 'Working',       description: 'You can manage service components to ensure they meet business needs and performance targets.'},
@@ -103,7 +103,7 @@ const softwareDeveloperSkillLevelDescriptors = {
 /*
  * https://www.gov.uk/guidance/software-developer
  */
-const roles = [
+const rolesAndMappedSkillLevelsLookup = [
     { title: 'Principal Software Developer - Management',       skills: [ { name: 'Availability and capacity management', level: 'Practitioner' },      { name: 'Development process optimisation', level: null },            { name: 'Development process optimisation (management)', level: 'Expert' },         { name: 'Information security', level: 'Expert' },          { name: 'Modern standards approach', level: 'Expert' },          { name: 'Programming and build (software engineering)', level: 'Practitioner' },     { name: 'Prototyping', level: 'Expert' },          { name: 'Service support', level: 'Practitioner' },    { name: 'Systems design', level: 'Expert' },          { name: 'Systems integration', level: 'Practitioner' },      { name: 'User focus', level: 'Practitioner' },        ]},
     { title: 'Lead Software Developer - Management',            skills: [ { name: 'Availability and capacity management', level: 'Practitioner' },      { name: 'Development process optimisation', level: null },            { name: 'Development process optimisation (management)', level: 'Practitioner' },   { name: 'Information security', level: 'Practitioner' },    { name: 'Modern standards approach', level: 'Expert' },          { name: 'Programming and build (software engineering)', level: 'Practitioner' },     { name: 'Prototyping', level: 'Practitioner' },    { name: 'Service support', level: 'Practitioner' },    { name: 'Systems design', level: 'Practitioner' },    { name: 'Systems integration', level: 'Practitioner' },      { name: 'User focus', level: 'Practitioner' },     ]},
     { title: 'Senior Software Developer - Management',          skills: [ { name: 'Availability and capacity management', level: 'Practitioner' },      { name: 'Development process optimisation', level: null },            { name: 'Development process optimisation (management)', level: 'Working' },        { name: 'Information security', level: 'Practitioner' },    { name: 'Modern standards approach', level: 'Practitioner' },    { name: 'Programming and build (software engineering)', level: 'Practitioner' },     { name: 'Prototyping', level: 'Practitioner' },    { name: 'Service support', level: 'Practitioner' },    { name: 'Systems design', level: 'Practitioner' },    { name: 'Systems integration', level: 'Practitioner' },      { name: 'User focus', level: 'Practitioner' },     ]},
