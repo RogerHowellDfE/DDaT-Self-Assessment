@@ -19,15 +19,17 @@ tableHead.innerHTML = theadInnerHtml;
 let tbodyInnerHtml = '';
 tbodyInnerHtml += allSkillNames
     .map(skill => {
+        const genericSkillDescription = skillsLookup[skill];
+
         let rowHtml = '';
         rowHtml += '<tr>';
         // rowHtml += '<th>' + skill + '<br/>' + '<br/>' + '<em style="font-weight: normal;">' + skillsLookup[skill] + '</em>' + '</th>';
         rowHtml += '<th>' + skill + '</th>';
-        rowHtml += '<td>' + skillsLookup[skill] + '</td>';
+        rowHtml += '<td>' + genericSkillDescription + '</td>';
         rowHtml += rolesAndMappedSkillLevelsLookup
             .map((role, index) => {
                 const skillDescriptor = role.skills.find(value => value.name === skill);
-                const skillDescriptorLevel = skillDescriptor.level;
+                const skillDescriptorLevel = skillDescriptor.level || null;
                 if (skillDescriptorLevel === null) {
                     return '<td class="text-center">' + '<em class="text-muted">No skill level specified</em>' + '</td>';
                 } else {
@@ -37,7 +39,7 @@ tbodyInnerHtml += allSkillNames
                     return '' +
                         '<td>' +
                         '<strong>' + skillDescriptorLevel + ': ' + '</strong>' +
-                        skillDescription +
+                        '<small>' + skillDescription + '</small>' +
                         '</td>';
                 }
             })
