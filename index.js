@@ -23,7 +23,7 @@ Object.keys(skills).forEach((skill, index) => {
         const skillDescriptors = role.skills.find(value => value.name === skill);
 
         if(skillDescriptors.level === '' || skillDescriptors.level === null || skillDescriptors.level === undefined) {
-            tbodyInnerHtml += '<td>' + 'level not specified' + '</td>';
+            tbodyInnerHtml += '<td>' + '<em class="text-muted">No skill level specified</em>' + '</td>';
         } else {
             console.info(skillDescriptors);
             console.info(role.skills);
@@ -31,7 +31,7 @@ Object.keys(skills).forEach((skill, index) => {
             console.info('softwareDeveloperSkillLevelDescriptor', softwareDeveloperSkillLevelDescriptor);
             const find = softwareDeveloperSkillLevelDescriptor.find(value => value.skillLevel === skillDescriptors.level);
             console.info('find', find);
-            const skillDescription = find.description;
+            const skillDescription = find.description || '<em>No description given for level</em>';
             tbodyInnerHtml += '<td>' + '<strong>' + skillDescriptors.level + ': ' + '</strong>' + skillDescription + '</td>';
         }
     });
