@@ -173,7 +173,7 @@ function updateSkillSelectionRadios(elem, model) {
                                                ${description === null ? ' disabled' : ''}
                                                ${isSelected ? 'checked' : '' }>
                                         <label class="form-check-label" for="${skillNameAsIdPrefix}_radio_${allSkillLevelName}">
-                                            <strong>${allSkillLevelName}.</strong>
+                                            <strong title="${skillLevelsLookup[allSkillLevelName]}">${allSkillLevelName}.</strong>
                                             ${description || 'Not Specified'}
                                         </label>
                                     </div>
